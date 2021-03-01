@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/styles.css">
+</head>
+
+<body>
+    <div>
+        <form>
+            <fieldset class="border">
+                <legend class="w-auto">Google Books Search</legend>
+                <div class="row form-group">
+                    <label for="txtSearch" class="col-sm-1 col-form-label">
+                        keyword:
+                    </label>
+                    <div class="col-sm-5 col-lg-4">
+                        <input type="text" id="txtSearch" name="txtSearch" class="form-control" placeholder="keyword...">
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-sm-4">
+                        <button type="button" class="btn btn-primary" onclick="searchGoogleBooks()">Search</button>
+                        <button type="reset" class="btn btn-secondary">Reset</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <div id="mainDiv"></div>
+
+</body>
+
+<script src="js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+
+</html>
