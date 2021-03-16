@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://unpkg.com/vue@next"></script>
     <link rel="stylesheet" href="style/styles.css">
 </head>
@@ -19,31 +19,39 @@
                         keyword:
                     </label>
                     <div class="col-sm-5 col-lg-4">
-                        <input type="text" id="txtSearch" name="txtSearch" class="form-control" placeholder="keyword..." v-model="keyword">
+                        <input type="text" id="txtSearch" name="txtSearch" class="form-control" placeholder="keyword..."
+                            v-model="keyword">
                     </div>
                 </div>
-    
+
                 <div class="row">
                     <div class="col-sm-4">
-                        <button type="submit" class="btn btn-primary">Search</button>
+                        <button type="submit" class="btn btn-primary" @click="cleanPagination">Search</button>
                         <button type="reset" class="btn btn-secondary">Reset</button>
                     </div>
                 </div>
             </fieldset>
+
+            <div class="row">
+                <button type="submit" class="col btn btn-light" v-show="startIndex != 0"
+                    @click="prevResults">Previous</button>
+                <button type="submit" class="col btn btn-light" v-show="result != null" @click="nextResults">Next</button>
+            </div>
         </form>
+
         <div id="mainDiv">
             <div class="row col-sm-5" v-if="result != null">found {{ (result != null)?result.totalItems:'' }}</div>
             <div class="row">
-                <book-display v-if="result != null" v-for="(book, index) in result.items" :key="book.id" :book="JSON.stringify(book)"></book-display>
+                <book-display v-if="result != null" v-for="(book, index) in result.items" :key="book.id"
+                    :book="JSON.stringify(book)"></book-display>
             </div>
-            
         </div>
     </div>
 
 </body>
 
 <!-- <script src="js/bootstrap.min.js"></script> -->
-<script src="js/main.js"></script> 
+<script src="js/main.js"></script>
 <script src="js/components/bookDisplay.js"></script>
 
 <script>
