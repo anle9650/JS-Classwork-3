@@ -33,9 +33,8 @@
             </fieldset>
 
             <div class="row">
-                <button type="submit" class="col btn btn-light" v-show="startIndex != 0"
-                    @click="prevResults">Previous</button>
-                <button type="submit" class="col btn btn-light" v-show="result != null" @click="nextResults">Next</button>
+                <button type="button" class="col btn btn-light" v-show="startIndex != 0" @click="prevResults">Previous</button>
+                <button type="button" class="col btn btn-light" v-show="result != null" @click="nextResults">Next</button>
             </div>
         </form>
 

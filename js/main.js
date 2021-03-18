@@ -14,9 +14,11 @@ const app = Vue.createApp({
         }, 
         nextResults() {
             this.startIndex += 20;
+            this.searchGoogleBooks();
         }, 
         prevResults() {
             this.startIndex -= 20;
+            this.searchGoogleBooks();
         },
         cleanPagination() {
             this.startIndex = 0;
