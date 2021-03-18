@@ -7,3 +7,7 @@ information returned for each search. The user can navigate between pages to obt
 
 Enter in the name of a title, author, or publisher in the search bar, and click search. Use the next button to display the next 20 results, or previous to return
 to the previous 20 results.
+
+## Technologies used
+
+Bootstrap was used for styling components. AJAX was used to retrieve book information from the Google Books API. Vue.js was used to dynamically bind form data to business logic, as well as implement a ViewModel to support a book display template.
